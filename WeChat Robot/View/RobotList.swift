@@ -1,0 +1,49 @@
+//
+//  RobotList.swift
+//  WeChat Robot
+//
+//  Created by yk on 7/6/19.
+//  Copyright © 2019 yk. All rights reserved.
+//
+
+import SwiftUI
+
+struct RobotList : View {
+  var robots: [Robot] = []
+  
+  private var addRobotButton: some View {
+    let icon = Image(systemName: "plus.circle").foregroundColor(.blue).font(.title)
+    return Button(action: {}) {
+      icon
+    }
+  }
+    var body: some View {
+      NavigationView {
+        
+        List {
+          ForEach(robots) {
+            robot in
+            RobotCell(robot: robot)
+          }
+        }
+        .navigationBarTitle("Robots")
+        .navigationBarItems(
+          leading: self.addRobotButton,
+          trailing: EditButton()
+        )
+    }
+  }
+}
+
+#if DEBUG
+struct RobotList_Previews : PreviewProvider {
+  static var robots = [
+    Robot(title: "123", api: URL(string: "http://pic.baike.soso.com/ugc/baikepic2/36950/20170304204240-436580019.jpg/0")!),
+    Robot(title: "434", api: URL(string: "http://pic.baike.soso.com/ugc/baikepic2/36950/20124234304204240-436580019.jpg/0")!),
+    Robot(title: "123", api: URL(string: "http://pic.baike.soso.com/ugc/baikepic2/36950/201703234234204240-436580019.jpg/0")!),
+  ]
+    static var previews: some View {
+        RobotList(robots: Self.robots)
+    }
+}
+#endif

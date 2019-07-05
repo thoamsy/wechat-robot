@@ -13,7 +13,9 @@
 		593319F422CFC275002B9FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F322CFC275002B9FA4 /* Assets.xcassets */; };
 		593319F722CFC275002B9FA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F622CFC275002B9FA4 /* Preview Assets.xcassets */; };
 		593319FA22CFC275002B9FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593319F822CFC275002B9FA4 /* LaunchScreen.storyboard */; };
-		59331A0322CFC2AA002B9FA4 /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0222CFC2AA002B9FA4 /* RobotCell.swift */; };
+		59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0422CFC473002B9FA4 /* RobotList.swift */; };
+		59331A0822CFC494002B9FA4 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0722CFC494002B9FA4 /* Robot.swift */; };
+		59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5EEB322CFC57C0055473A /* RobotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		593319F622CFC275002B9FA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		593319F922CFC275002B9FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		593319FB22CFC275002B9FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59331A0222CFC2AA002B9FA4 /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
+		59331A0422CFC473002B9FA4 /* RobotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotList.swift; sourceTree = "<group>"; };
+		59331A0722CFC494002B9FA4 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		59C5EEB322CFC57C0055473A /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		593319EC22CFC26F002B9FA4 /* WeChat Robot */ = {
 			isa = PBXGroup;
 			children = (
+				59331A0622CFC48A002B9FA4 /* Model */,
 				59331A0122CFC28D002B9FA4 /* View */,
 				593319ED22CFC26F002B9FA4 /* AppDelegate.swift */,
 				593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */,
@@ -81,9 +86,18 @@
 		59331A0122CFC28D002B9FA4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				59331A0222CFC2AA002B9FA4 /* RobotCell.swift */,
+				59331A0422CFC473002B9FA4 /* RobotList.swift */,
+				59C5EEB322CFC57C0055473A /* RobotCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		59331A0622CFC48A002B9FA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59331A0722CFC494002B9FA4 /* Robot.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */,
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,
 				593319F222CFC26F002B9FA4 /* ContentView.swift in Sources */,
-				59331A0322CFC2AA002B9FA4 /* RobotCell.swift in Sources */,
+				59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */,
+				59331A0822CFC494002B9FA4 /* Robot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
