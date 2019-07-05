@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RobotList : View {
-  var robots: [Robot] = []
+  @State var robots: [Robot] = []
   
   private var addRobotButton: some View {
     let icon = Image(systemName: "plus.circle").foregroundColor(.blue).font(.title)
@@ -17,6 +17,22 @@ struct RobotList : View {
       icon
     }
   }
+  
+  private func delete(at offsets: IndexSet) {
+    offsets.forEach {
+      robots.remove(at: $0)
+    }
+  }
+  
+  private func move(from source: IndexSet, to destination: Int) {
+      var remove = [Robot]()
+    for index in source {
+      remove.append(robots[index])
+      robots.remove(at: index)
+    }
+    robots.insert(contentsOf: remove, at: destination)
+  }
+  
     var body: some View {
       NavigationView {
         
@@ -25,6 +41,8 @@ struct RobotList : View {
             robot in
             RobotCell(robot: robot)
           }
+            .onMove(perform: move)
+            .onDelete(perform: delete)
         }
         .navigationBarTitle("Robots")
         .navigationBarItems(
