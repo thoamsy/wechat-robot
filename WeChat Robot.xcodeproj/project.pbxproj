@@ -13,6 +13,7 @@
 		593319F422CFC275002B9FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F322CFC275002B9FA4 /* Assets.xcassets */; };
 		593319F722CFC275002B9FA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F622CFC275002B9FA4 /* Preview Assets.xcassets */; };
 		593319FA22CFC275002B9FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593319F822CFC275002B9FA4 /* LaunchScreen.storyboard */; };
+		59331A0322CFC2AA002B9FA4 /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0222CFC2AA002B9FA4 /* RobotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		593319F622CFC275002B9FA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		593319F922CFC275002B9FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		593319FB22CFC275002B9FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59331A0222CFC2AA002B9FA4 /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		593319EC22CFC26F002B9FA4 /* WeChat Robot */ = {
 			isa = PBXGroup;
 			children = (
+				59331A0122CFC28D002B9FA4 /* View */,
 				593319ED22CFC26F002B9FA4 /* AppDelegate.swift */,
 				593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */,
 				593319F122CFC26F002B9FA4 /* ContentView.swift */,
@@ -73,6 +76,14 @@
 				593319F622CFC275002B9FA4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59331A0122CFC28D002B9FA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59331A0222CFC2AA002B9FA4 /* RobotCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,
 				593319F222CFC26F002B9FA4 /* ContentView.swift in Sources */,
+				59331A0322CFC2AA002B9FA4 /* RobotCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
