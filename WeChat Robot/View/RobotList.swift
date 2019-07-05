@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct RobotList : View {
+  @State var isPresented = false
   @State var robots: [Robot] = []
   
   private var addRobotButton: some View {
     let icon = Image(systemName: "plus.circle").foregroundColor(.blue).font(.title)
-    return Button(action: {}) {
-      icon
+    
+    let modal = Modal(NewRobot()) {
+      self.isPresented = false
     }
+    return Button(action: {
+      self.isPresented = true
+    }) {
+      icon
+    }.presentation(isPresented ? modal : nil)
   }
   
   private func delete(at offsets: IndexSet) {
