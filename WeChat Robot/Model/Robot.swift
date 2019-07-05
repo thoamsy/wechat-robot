@@ -7,10 +7,29 @@
 //
 
 import SwiftUI
+import Combine
 
-struct Robot: Identifiable {
-  var title = "🤖️"
-  let api: URL
+final class Robot: Identifiable & BindableObject {
+  
+  var didChange = PassthroughSubject<Robot, Never>()
+  
+  
+  init?(title: String = "🤖️", url api: String) {
+    self.title = title
+    guard let vaildURL = URL(string: api) else { return nil }
+    self.api = vaildURL
+  }
+  
+  var title = "🤖️" {
+    didSet {
+      didChange.send(self)
+    }
+  }
+  var api: URL {
+    didSet {
+      didChange.send(self)
+    }
+  }
   var id: String {
     api.absoluteString
   }
