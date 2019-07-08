@@ -20,6 +20,8 @@ final class Robot: Identifiable & BindableObject {
     self.api = vaildURL
   }
   
+  static let msgTypes = ["text", "markdown", "news"]
+  
   var title = "🤖️" {
     didSet {
       didChange.send(self)
@@ -32,5 +34,13 @@ final class Robot: Identifiable & BindableObject {
   }
   var id: String {
     api.absoluteString
+  }
+  
+  var text = Text()
+  
+  struct Text {
+    var content: String = ""
+    var mentionedAll = false
+    var mentionedMobileList = [Int]()
   }
 }
