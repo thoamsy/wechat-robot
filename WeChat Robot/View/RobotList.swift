@@ -46,7 +46,8 @@ struct RobotList : View {
         List {
           ForEach(robots) {
             robot in
-            RobotCell(robot: robot)
+            NavigationLink(destination: RobotEdit(robot: robot)) { RobotCell(robot: robot)
+            }
           }
             .onMove(perform: move)
             .onDelete(perform: delete)
@@ -63,9 +64,9 @@ struct RobotList : View {
 #if DEBUG
 struct RobotList_Previews : PreviewProvider {
   static var robots = [
-    Robot(title: "123", url:  "http://pic.baike.soso.com/ugc/baikepic2/36950/20170304204240-436580019.jpg/0")!,
-    Robot(title: "434", url:  "http://pic.baike.soso.com/ugc/baikepic2/36950/20124234304204240-436580019.jpg/0")!,
-    Robot(title: "123", url:  "http://pic.baike.soso.com/ugc/baikepic2/36950/201703234234204240-436580019.jpg/0")!,
+    Robot(title: "1232", url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb61722")!,
+    Robot(title: "434", url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb61733")!,
+    Robot(title: "123", url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb61755")!,
   ]
     static var previews: some View {
         RobotList(robots: Self.robots)
