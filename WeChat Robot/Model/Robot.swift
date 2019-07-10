@@ -9,15 +9,15 @@
 import SwiftUI
 import Combine
 
-final class Robot: Identifiable & BindableObject {
+final class Robot: BindableObject {
   
   var didChange = PassthroughSubject<Robot, Never>()
   
   
-  init?(title: String = "🤖️", url api: String) {
+  init(title: String = "🤖️", url api: String) {
     self.title = title
-    guard let vaildURL = URL(string: api) else { return nil }
-    self.api = vaildURL
+    // 可以确保一定是合法的 URL
+    self.api = URL(string: api)!
   }
   
   static let msgTypes = ["text", "markdown", "news"]

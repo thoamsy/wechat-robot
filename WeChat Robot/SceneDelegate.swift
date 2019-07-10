@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Use a UIHostingController as window root view controller
     if let windowScene = scene as? UIWindowScene {
         let window = UIWindow(windowScene: windowScene)
-      window.rootViewController = UIHostingController(rootView: RobotList(robots: [ Robot(title: "123", url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb617")!]))
+      window.rootViewController = UIHostingController(rootView: RobotList().environmentObject(RobotStore()))
         self.window = window
         window.makeKeyAndVisible()
     }

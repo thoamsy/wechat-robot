@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591CEFEF22D61E8400884678 /* RobotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CEFEE22D61E8400884678 /* RobotStore.swift */; };
 		5920A40222D38D5B00D61A66 /* RobotEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5920A40122D38D5B00D61A66 /* RobotEdit.swift */; };
 		593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593319ED22CFC26F002B9FA4 /* AppDelegate.swift */; };
 		593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		591CEFEE22D61E8400884678 /* RobotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotStore.swift; sourceTree = "<group>"; };
 		5920A40122D38D5B00D61A66 /* RobotEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotEdit.swift; sourceTree = "<group>"; };
 		593319EA22CFC26F002B9FA4 /* WeChat Robot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeChat Robot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593319ED22CFC26F002B9FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				59331A0722CFC494002B9FA4 /* Robot.swift */,
+				591CEFEE22D61E8400884678 /* RobotStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591CEFEF22D61E8400884678 /* RobotStore.swift in Sources */,
 				59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */,
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,

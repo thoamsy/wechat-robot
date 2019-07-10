@@ -26,7 +26,7 @@ struct RobotCell : View {
 #if DEBUG
 struct RobotCell_Previews : PreviewProvider {
   static var previews: some View {
-    RobotCell(robot: Robot(url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb617")!).previewLayout(.fixed(width: 300, height: 80))
+    RobotCell(robot: Robot(url:  "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2c00c5df-31e1-4fae-9c96-c8202d3bb617")).previewLayout(.fixed(width: 300, height: 80))
   }
 }
 #endif

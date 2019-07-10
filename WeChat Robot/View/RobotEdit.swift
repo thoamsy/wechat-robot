@@ -66,7 +66,7 @@ struct RobotEdit : View {
 #if DEBUG
 struct RobotEdit_Previews : PreviewProvider {
   static var previews: some View {
-    RobotEdit(robot: Robot(title: "jl", url: "https://m.lagou.com/jobs/5642749.html")!)
+    RobotEdit(robot: Robot(title: "jl", url: "https://m.lagou.com/jobs/5642749.html"))
   }
 }
 #endif
