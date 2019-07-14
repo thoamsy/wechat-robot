@@ -20,7 +20,7 @@ final class Robot: Identifiable {
     self.api = URL(string: api)!
   }
   
-  static let msgTypes = ["text", "markdown", "news"]
+  static let msgTypes = ["text", "news"]
   
   var title = "🤖️" {
     didSet {

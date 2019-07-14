@@ -15,7 +15,11 @@ struct RobotEdit : View {
   @State var newsDescription = ""
   @State var newsLink = ""
   @State var newsFigure = ""
-  @State var selected: String = Robot.msgTypes[0]
+  @State var isMarkdown = false
+  @State var isAll = false
+  @State var selected: String =
+    Robot.msgTypes[0]
+
   
   var body: some View {
     VStack(alignment: .leading) {
@@ -26,17 +30,23 @@ struct RobotEdit : View {
       }
       .frame(height: 100)
       
-      if selected == Robot.msgTypes[0] || selected == Robot.msgTypes[1] {
+      if selected == Robot.msgTypes[0] {
         Form {
-          HStack {
-            Text("内容").bold()
-            Divider()
-          MultilineTextView(
-            self.$textContent
-          )
-            .frame(height: 150)
-            .font(.body)
-            
+          Section(header: Text("内容")) {
+            HStack {
+            MultilineTextView(
+              self.$textContent,
+              placeholder: "通知点啥呢🤔?"
+            )
+              .frame(height: 150)
+              .font(.body)
+              
+            }
+          }
+          
+          Section(header: Text("配置")) {
+          Toggle("是否 @ 所有人", isOn: $isAll)
+          Toggle("Markdown", isOn: $isMarkdown)
           }
         }
       } else {
