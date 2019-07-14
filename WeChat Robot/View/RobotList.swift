@@ -36,18 +36,23 @@ struct RobotList : View {
     List {
       ForEach(store.robots) {
         robot in
-        NavigationLink(destination: RobotEdit(robot: robot)) { RobotCell(robot: robot)
+        NavigationLink(destination:
+          RobotEdit(robot: robot)
+        ) {
+          RobotCell(robot: robot)
         }
       }
       .onMove(perform: move)
-        .onDelete(perform: delete)
+      .onDelete(perform: delete)
     }
   }
   
   private var emptyView: some View {
     VStack(alignment: .center) {
-      Text("🤖").font(.system(size: 100))
-      Text("没有任何机器人").font(.subheadline)
+      Text("🤖")
+        .font(.system(size: 100))
+      Text("没有任何机器人")
+        .font(.subheadline)
     }
     
   }

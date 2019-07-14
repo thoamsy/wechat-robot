@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RobotEdit : View {
-  @ObjectBinding var robot: Robot
+  var robot: Robot
   @State var textContent = ""
   @State var newsTitle = ""
   @State var newsDescription = ""

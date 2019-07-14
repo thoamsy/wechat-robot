@@ -9,9 +9,9 @@
 import SwiftUI
 import Combine
 
-final class Robot: BindableObject {
+final class Robot: Identifiable {
   
-  var didChange = PassthroughSubject<Robot, Never>()
+//  var didChange = PassthroughSubject<Robot, Never>()
   
   
   init(title: String = "🤖️", url api: String) {
@@ -24,23 +24,25 @@ final class Robot: BindableObject {
   
   var title = "🤖️" {
     didSet {
-      didChange.send(self)
+//      didChange.send(self)
     }
   }
   var api: URL {
     didSet {
-      didChange.send(self)
+//      didChange.send(self)
     }
   }
   var id: String {
     api.absoluteString
   }
   
-  var text = Text()
-  
   struct Text {
     var content: String = ""
     var mentionedAll = false
     var mentionedMobileList = [Int]()
   }
+}
+
+extension Robot: Codable {
+  
 }

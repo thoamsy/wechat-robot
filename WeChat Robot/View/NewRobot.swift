@@ -16,8 +16,7 @@ struct NewRobot : View {
   @State private var hasError = false
   @State private var canSave = false
   
-  private func saveRobot() {
-    store.robots.append(Robot(title: self.title, url: self.urlString))
+  private func saveRobot() {    store.robots.append(Robot(title: self.title, url: self.urlString))
     isPresented?.wrappedValue = false
   }
   
