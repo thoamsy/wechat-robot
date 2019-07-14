@@ -31,7 +31,12 @@ struct RobotEdit : View {
           HStack {
             Text("内容").bold()
             Divider()
-            TextField("", text: self.$textContent).frame(height: 100)
+          MultilineTextView(
+            self.$textContent
+          )
+            .frame(height: 150)
+            .font(.body)
+            
           }
         }
       } else {

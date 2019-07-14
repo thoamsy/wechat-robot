@@ -17,6 +17,7 @@
 		593319FA22CFC275002B9FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593319F822CFC275002B9FA4 /* LaunchScreen.storyboard */; };
 		59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0422CFC473002B9FA4 /* RobotList.swift */; };
 		59331A0822CFC494002B9FA4 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0722CFC494002B9FA4 /* Robot.swift */; };
+		5965C1D022DB629D001FCFC3 /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965C1CF22DB629D001FCFC3 /* MultilineTextView.swift */; };
 		59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5EEB322CFC57C0055473A /* RobotCell.swift */; };
 		59C5EEB622CFCB490055473A /* NewRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5EEB522CFCB490055473A /* NewRobot.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		593319FB22CFC275002B9FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59331A0422CFC473002B9FA4 /* RobotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotList.swift; sourceTree = "<group>"; };
 		59331A0722CFC494002B9FA4 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		5965C1CF22DB629D001FCFC3 /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
 		59C5EEB322CFC57C0055473A /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
 		59C5EEB522CFCB490055473A /* NewRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRobot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				59C5EEB322CFC57C0055473A /* RobotCell.swift */,
 				59C5EEB522CFCB490055473A /* NewRobot.swift */,
 				5920A40122D38D5B00D61A66 /* RobotEdit.swift */,
+				5965C1CF22DB629D001FCFC3 /* MultilineTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,
 				593319F222CFC26F002B9FA4 /* ContentView.swift in Sources */,
+				5965C1D022DB629D001FCFC3 /* MultilineTextView.swift in Sources */,
 				59C5EEB622CFCB490055473A /* NewRobot.swift in Sources */,
 				59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */,
 				5920A40222D38D5B00D61A66 /* RobotEdit.swift in Sources */,
