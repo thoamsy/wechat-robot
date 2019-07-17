@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct RobotEdit : View {
+  var sessionConfig = URLSessionConfiguration.default
+  
   var robot: Robot
   @State var textContent = ""
   @State var newsTitle = ""
@@ -20,6 +22,25 @@ struct RobotEdit : View {
   @State var selected: String =
     Robot.msgTypes[0]
 
+  func launchNotification() {
+    var request = URLRequest(url: robot.api)
+    request.httpMethod = "POST"
+    let body: [String: Any] = [
+      "msgType": selected,
+      "text": [
+        "mentioned_mobile_list": isAll ? ["isAll"] : [],
+        "content": textContent
+      ]
+    ]
+    let jsonData = try? JSONSerialization.data(withJSONObject: body)
+    request.httpBody = jsonData
+    
+    URLSession(configuration: sessionConfig).dataTask(with: robot.api) {
+      data, response, error in
+      
+      print(data, response, error)
+    }
+  }
   
   private var textView: some View {
     Form {
@@ -68,32 +89,30 @@ struct RobotEdit : View {
   }
   
   var body: some View {
-    NavigationView {
-      VStack(alignment: .leading) {
-        SegmentedControl(selection: $selected) {
-          ForEach(Robot.msgTypes.identified(by: \.self)) { type in
-            Text(type.capitalized)
-          }
-        }
-        .frame(height: 100)
-
-        if selected == Robot.msgTypes[0] {
-          textView
-        } else {
-          newsView
+    VStack(alignment: .leading) {
+      SegmentedControl(selection: $selected) {
+        ForEach(Robot.msgTypes.identified(by: \.self)) { type in
+          Text(type.capitalized)
         }
       }
-      .navigationBarTitle(
-        "编辑",
-        displayMode: .inline
-      )
-      .navigationBarItems(
-        trailing:
-          Button(action: {}) {
-            Text("Done 🚀").color(.black)
-        }
-       )
+      .frame(height: 100)
+
+      if selected == Robot.msgTypes[0] {
+        textView
+      } else {
+        newsView
+      }
     }
+    .navigationBarTitle(
+      "编辑",
+      displayMode: .inline
+    )
+    .navigationBarItems(
+      trailing:
+        Button(action: launchNotification) {
+          Text("Done 🚀").color(.black)
+      }
+     )
   }
   
 }
