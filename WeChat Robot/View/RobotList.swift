@@ -72,7 +72,7 @@ struct RobotList: View {
             isPresented: $showAdding,
             onDismiss: {
               self.showAdding = false
-          }) { NewRobot().environmentObject(self.store)
+          }) { NewRobot(show: self.$showAdding).environmentObject(self.store)
           }
       } else {
         emptyView

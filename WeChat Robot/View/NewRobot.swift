@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NewRobot: View {
-  @Environment(\.isPresented) var isPresented: Binding<Bool>?
+  @Binding var show: Bool
   @EnvironmentObject var store: RobotStore
   @State private var title: String = ""
   @State private var urlString: String = ""
@@ -17,7 +17,7 @@ struct NewRobot: View {
   @State private var canSave = false
 
   private func saveRobot() { store.robots.append(Robot(title: title, url: urlString))
-    isPresented?.wrappedValue = false
+    self.show = false
   }
 
   private func isValidAPIKey(with url: String) -> Bool {
@@ -66,7 +66,7 @@ struct NewRobot: View {
 #if DEBUG
   struct NewRobot_Previews: PreviewProvider {
     static var previews: some View {
-      NewRobot().environmentObject(RobotStore())
+      NewRobot(show: .constant(true)).environmentObject(RobotStore())
     }
   }
 #endif
