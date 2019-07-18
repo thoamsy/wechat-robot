@@ -11,12 +11,15 @@ SwiftUI 和 iOS 初探项目, 想知道 SwiftUI 的能力边界和一些局限,�
 
 ## 更新记录
 
+主要是我的代码中, 有所改动的地方
+
 ### Beta 4
 
 1. `BindableObject` 的协议改了, 叫做 `willChange` 并在 `willSet` 中 `send`.
 2. 修复了 Preview 不能输入的问题
 3. `PresentationLink` 被淘汰了, 采用新的 `sheet` 来展示 `Modal`. 使用方式类似 `navigationTitle`
 4. `color` -> `foregroundColor`
+5. `identified(by:)` 被废弃, 可以直接对 `ForEach, List` 指定 id.
 
 更多调整参考 macOS [更新日志](https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_beta_4_release_notes)
 
