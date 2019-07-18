@@ -8,18 +8,18 @@
 
 import SwiftUI
 
-struct NewRobot : View {
+struct NewRobot: View {
   @Environment(\.isPresented) var isPresented: Binding<Bool>?
   @EnvironmentObject var store: RobotStore
   @State private var title: String = ""
   @State private var urlString: String = ""
   @State private var hasError = false
   @State private var canSave = false
-  
-  private func saveRobot() {    store.robots.append(Robot(title: self.title, url: self.urlString))
+
+  private func saveRobot() { store.robots.append(Robot(title: title, url: urlString))
     isPresented?.wrappedValue = false
   }
-  
+
   private func isValidAPIKey(with url: String) -> Bool {
     guard
       let url = URL(string: self.urlString),
@@ -27,12 +27,12 @@ struct NewRobot : View {
       let item = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?[0],
       item.name == "key",
       let _ = item.value
-      else {
-        return false
+    else {
+      return false
     }
     return true
   }
-  
+
   var body: some View {
     NavigationView {
       Form {
@@ -42,8 +42,7 @@ struct NewRobot : View {
         Section {
           VStack(alignment: .leading) {
             TextField("API URL", text: $urlString, onCommit: {
-              
-              if (self.isValidAPIKey(with: self.urlString)) {
+              if self.isValidAPIKey(with: self.urlString) {
                 self.hasError = false
                 self.canSave = true
               } else {
@@ -51,23 +50,23 @@ struct NewRobot : View {
                 self.canSave = false
               }
             }).textContentType(.URL)
-            
-            hasError ? Text("你必须输入符合企业微信机器人协议的 URL").font(.footnote).color(.red) : nil
+
+            hasError ? Text("你必须输入符合企业微信机器人协议的 URL").font(.footnote).foregroundColor(.red) : nil
           }
         }
       }
       .navigationBarTitle("New Robot")
-        .navigationBarItems(
-          trailing: Button(action: self.saveRobot) { Text("Save")
-          }.disabled(!canSave))
+      .navigationBarItems(
+        trailing: Button(action: self.saveRobot) { Text("Save")
+      }.disabled(!canSave))
     }
   }
 }
 
 #if DEBUG
-struct NewRobot_Previews : PreviewProvider {
-  static var previews: some View {
-    NewRobot().environmentObject(RobotStore())
+  struct NewRobot_Previews: PreviewProvider {
+    static var previews: some View {
+      NewRobot().environmentObject(RobotStore())
+    }
   }
-}
 #endif

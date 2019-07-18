@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct RobotEdit : View {
+struct RobotEdit: View {
   var sessionConfig = URLSessionConfiguration.default
-  
+
   var robot: Robot
   @State var textContent = ""
   @State var newsTitle = ""
@@ -29,19 +29,19 @@ struct RobotEdit : View {
       "msgType": selected,
       "text": [
         "mentioned_mobile_list": isAll ? ["isAll"] : [],
-        "content": textContent
-      ]
+        "content": textContent,
+      ],
     ]
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     request.httpBody = jsonData
-    
+
     URLSession(configuration: sessionConfig).dataTask(with: robot.api) {
       data, response, error in
-      
+
       print(data, response, error)
     }
   }
-  
+
   private var textView: some View {
     Form {
       Section(header: Text("内容")) {
@@ -50,19 +50,18 @@ struct RobotEdit : View {
             self.$textContent,
             placeholder: "通知点啥呢🤔?"
           )
-            .frame(height: 150)
-            .font(.body)
-          
+          .frame(height: 150)
+          .font(.body)
         }
       }
-      
+
       Section(header: Text("配置")) {
         Toggle("是否 @ 所有人", isOn: $isAll)
         Toggle("Markdown", isOn: $isMarkdown)
       }
     }
   }
-  
+
   private var newsView: some View {
     Form {
       HStack {
@@ -87,11 +86,11 @@ struct RobotEdit : View {
       }
     }
   }
-  
+
   var body: some View {
     VStack(alignment: .leading) {
       SegmentedControl(selection: $selected) {
-        ForEach(Robot.msgTypes.identified(by: \.self)) { type in
+        ForEach(Robot.msgTypes, id: \.self) { type in
           Text(type.capitalized)
         }
       }
@@ -109,18 +108,17 @@ struct RobotEdit : View {
     )
     .navigationBarItems(
       trailing:
-        Button(action: launchNotification) {
-          Text("Done 🚀").color(.black)
+      Button(action: launchNotification) {
+        Text("Done 🚀").foregroundColor(.black)
       }
-     )
+    )
   }
-  
 }
 
 #if DEBUG
-struct RobotEdit_Previews : PreviewProvider {
-  static var previews: some View {
-    RobotEdit(robot: Robot(title: "jl", url: "https://m.lagou.com/jobs/5642749.html"))
+  struct RobotEdit_Previews: PreviewProvider {
+    static var previews: some View {
+      RobotEdit(robot: Robot(title: "jl", url: "https://m.lagou.com/jobs/5642749.html"))
+    }
   }
-}
 #endif

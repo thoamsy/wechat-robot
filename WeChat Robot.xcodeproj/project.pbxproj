@@ -11,7 +11,6 @@
 		5920A40222D38D5B00D61A66 /* RobotEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5920A40122D38D5B00D61A66 /* RobotEdit.swift */; };
 		593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593319ED22CFC26F002B9FA4 /* AppDelegate.swift */; };
 		593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */; };
-		593319F222CFC26F002B9FA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593319F122CFC26F002B9FA4 /* ContentView.swift */; };
 		593319F422CFC275002B9FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F322CFC275002B9FA4 /* Assets.xcassets */; };
 		593319F722CFC275002B9FA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593319F622CFC275002B9FA4 /* Preview Assets.xcassets */; };
 		593319FA22CFC275002B9FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593319F822CFC275002B9FA4 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		593319EA22CFC26F002B9FA4 /* WeChat Robot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeChat Robot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593319ED22CFC26F002B9FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		593319F122CFC26F002B9FA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		593319F322CFC275002B9FA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		593319F622CFC275002B9FA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		593319F922CFC275002B9FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				59331A0122CFC28D002B9FA4 /* View */,
 				593319ED22CFC26F002B9FA4 /* AppDelegate.swift */,
 				593319EF22CFC26F002B9FA4 /* SceneDelegate.swift */,
-				593319F122CFC26F002B9FA4 /* ContentView.swift */,
 				593319F322CFC275002B9FA4 /* Assets.xcassets */,
 				593319F822CFC275002B9FA4 /* LaunchScreen.storyboard */,
 				593319FB22CFC275002B9FA4 /* Info.plist */,
@@ -187,7 +184,6 @@
 				59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */,
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,
-				593319F222CFC26F002B9FA4 /* ContentView.swift in Sources */,
 				5965C1D022DB629D001FCFC3 /* MultilineTextView.swift in Sources */,
 				59C5EEB622CFCB490055473A /* NewRobot.swift in Sources */,
 				59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */,

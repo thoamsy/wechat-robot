@@ -13,7 +13,7 @@ struct MultilineTextView : UIViewRepresentable {
   let placeholder: String
   
   init(_ text: Binding<String>, placeholder: String = "") {
-    self.$text = text
+    self._text = text
     self.placeholder = placeholder
   }
   
