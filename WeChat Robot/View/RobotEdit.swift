@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct RobotEdit: View {
   var sessionConfig = URLSessionConfiguration.default
 
@@ -26,7 +27,7 @@ struct RobotEdit: View {
     var request = URLRequest(url: robot.api)
     request.httpMethod = "POST"
     let body: [String: Any] = [
-      "msgType": selected,
+      "msgtype": selected,
       "text": [
         "mentioned_mobile_list": isAll ? ["isAll"] : [],
         "content": textContent,
@@ -35,11 +36,10 @@ struct RobotEdit: View {
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     request.httpBody = jsonData
 
-    URLSession(configuration: sessionConfig).dataTask(with: robot.api) {
+    URLSession(configuration: sessionConfig).dataTask(with: request) {
       data, response, error in
-
       print(data, response, error)
-    }
+    }.resume()
   }
 
   private var textView: some View {
@@ -108,9 +108,7 @@ struct RobotEdit: View {
     )
     .navigationBarItems(
       trailing:
-      Button(action: launchNotification) {
-        Text("Done 🚀").foregroundColor(.black)
-      }
+      Button("发送", action: launchNotification)
     )
   }
 }

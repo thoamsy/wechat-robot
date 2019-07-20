@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8B434080-3FAD-4CE7-A5B1-1E6B85597939"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeChat Robot/Model/RobotStore.swift"
@@ -49,6 +49,86 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "init(initialValue:key:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C24E697-E1EE-46C8-8AAA-10AC380DB6CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeChat Robot/View/RobotEdit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "launchNotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA120E1D-17E5-422A-BAD6-82428D888F16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeChat Robot/View/RobotEdit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "launchNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA120E1D-17E5-422A-BAD6-82428D888F16 - 9c897342a3e4156b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeChat_Robot.RobotEdit.launchNotification() -&gt; ()"
+                  moduleName = "WeChat Robot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yk/Documents/SwiftUI/WeChat%20Robot/WeChat%20Robot/View/RobotEdit.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1749">
+               </Location>
+               <Location
+                  uuid = "DA120E1D-17E5-422A-BAD6-82428D888F16 - 56cb4a6e0c72973f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeChat_Robot.RobotEdit.launchNotification() -&gt; ()"
+                  moduleName = "WeChat Robot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yk/Documents/SwiftUI/WeChat%20Robot/WeChat%20Robot/View/RobotEdit.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA7072EC-CB1A-4597-AA08-E720E362E06D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeChat Robot/View/MultilineTextView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "finishEditing(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

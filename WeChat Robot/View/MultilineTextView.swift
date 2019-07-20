@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct MultilineTextView : UIViewRepresentable {
   @Binding var text: String
   let placeholder: String
@@ -19,9 +20,12 @@ struct MultilineTextView : UIViewRepresentable {
   
   class Coordinator: NSObject, UITextViewDelegate {
     var placeholder = ""
+    @Binding var text: String
+    weak var view: UITextView?
     
-    init(_ p: String) {
+    init(_ p: String, text: Binding<String>) {
       placeholder = p
+      self._text = text
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
@@ -31,11 +35,17 @@ struct MultilineTextView : UIViewRepresentable {
       }
       return true
     }
+    
+    @objc func finishEditing(sender: UIBarButtonItem) {
+      text = self.view?.text ?? ""
+      self.view?.endEditing(true)
+    }
   }
 
   func makeCoordinator() -> MultilineTextView.Coordinator {
-    return Coordinator(placeholder)
+    return Coordinator(placeholder, text: self.$text)
   }
+  
   
   func makeUIView(context: Context) -> UITextView {
     let view = UITextView()
@@ -44,11 +54,20 @@ struct MultilineTextView : UIViewRepresentable {
     view.isUserInteractionEnabled = true
     view.font = .systemFont(ofSize: 20)
     view.delegate = context.coordinator
+    context.coordinator.view = view
+    view.keyboardDismissMode = .interactive
+    
+    let bar = UIToolbar()
+    let reset = UIBarButtonItem(title: "Done", style: .plain, target: view.delegate, action: #selector(Coordinator.finishEditing(sender:)))
+    
+    bar.items = [reset]
+    bar.sizeToFit()
+    
+    view.inputAccessoryView = bar
     return view
   }
   
   func updateUIView(_ uiView: UITextView, context: Context) {
-    print("Update")
     uiView.text = text
     if (text.isEmpty && !uiView.isFirstResponder) {
       uiView.text = placeholder
