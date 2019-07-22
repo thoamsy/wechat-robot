@@ -22,6 +22,14 @@ struct RobotEdit: View {
   @State var isAll = false
   @State var selected: String =
     Robot.msgTypes[0]
+  
+  
+  var cantLaunch: Bool {
+    if selected == Robot.msgTypes[0] {
+      return textContent.isEmpty
+    }
+    return newsTitle.isEmpty || newsDescription.isEmpty || newsLink.isEmpty || newsFigure.isEmpty
+  }
 
   func launchNotification() {
     var request = URLRequest(url: robot.api)
@@ -108,7 +116,7 @@ struct RobotEdit: View {
     )
     .navigationBarItems(
       trailing:
-      Button("发送", action: launchNotification)
+      Button("发送", action: launchNotification).disabled(cantLaunch)
     )
   }
 }
