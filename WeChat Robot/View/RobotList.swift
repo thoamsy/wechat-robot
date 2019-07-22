@@ -68,12 +68,6 @@ struct RobotList: View {
             leading: self.addRobotButton,
             trailing: EditButton()
           )
-          .sheet(
-            isPresented: $showAdding,
-            onDismiss: {
-              self.showAdding = false
-          }) { NewRobot(show: self.$showAdding).environmentObject(self.store)
-          }
       } else {
         emptyView
           .navigationBarItems(
@@ -81,7 +75,13 @@ struct RobotList: View {
             trailing: EditButton()
           )
       }
+    }.sheet(
+      isPresented: $showAdding,
+      onDismiss: {
+        self.showAdding = false
+    }) { NewRobot(show: self.$showAdding).environmentObject(self.store)
     }
+
   }
 }
 
