@@ -11,27 +11,32 @@ import SwiftUI
 
 struct MultilineTextView : UIViewRepresentable {
   @Binding var text: String
+  var colorSchema: ColorScheme = ColorScheme.light
+  
   let placeholder: String
   
-  init(_ text: Binding<String>, placeholder: String = "") {
+  init(_ text: Binding<String>, placeholder: String = "", with colorSchema: ColorScheme) {
     self._text = text
     self.placeholder = placeholder
+    self.colorSchema = colorSchema
   }
   
   class Coordinator: NSObject, UITextViewDelegate {
     var placeholder = ""
     @Binding var text: String
+    var colorSchema: ColorScheme
     weak var view: UITextView?
     
-    init(_ p: String, text: Binding<String>) {
+    init(_ p: String, text: Binding<String>, with colorSchema: ColorScheme) {
       placeholder = p
+      self.colorSchema = colorSchema
       self._text = text
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
       if (textView.text == placeholder) {
         textView.text = ""
-        textView.textColor = .black
+        textView.textColor = colorSchema == .dark ? UIColor.white : UIColor.black
       }
       return true
     }
@@ -43,7 +48,7 @@ struct MultilineTextView : UIViewRepresentable {
   }
 
   func makeCoordinator() -> MultilineTextView.Coordinator {
-    return Coordinator(placeholder, text: self.$text)
+    return Coordinator(placeholder, text: self.$text, with: colorSchema)
   }
   
   
@@ -56,7 +61,7 @@ struct MultilineTextView : UIViewRepresentable {
     view.delegate = context.coordinator
     context.coordinator.view = view
     view.keyboardDismissMode = .interactive
-    
+        
     let bar = UIToolbar()
     let reset = UIBarButtonItem(title: "Done", style: .plain, target: view.delegate, action: #selector(Coordinator.finishEditing(sender:)))
     

@@ -18,7 +18,11 @@ final class Robot: Identifiable {
     self.api = URL(string: api)!
   }
 
-  static let msgTypes = ["text", "news"]
+  enum MsgTypes: String, CaseIterable, Hashable {
+    case text
+    case news
+//    case markdown
+  }
 
   var title = "🤖️" {
     didSet {
