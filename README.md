@@ -1,14 +1,20 @@
 # 说明
 
 SwiftUI 和 iOS 初探项目, 想知道 SwiftUI 的能力边界和一些局限,相比 JSX 的优缺点和 Combine 的强大.
-想实现一个企业微信发送器, 期望做到一下功能
+想实现一个企业微信发送器, 期望做到以下功能
 
-1. 基本的增加编辑机器人, 并发送指定类型的信息
-2. 整合 shortcut 的自动化
-3. 用点新特性, 比如 `CoreHaptic` 啥的
-4. Apple Watch!
+- [x] 基本的增加编辑机器人, 并发送指定类型的信息
+- [ ] 支持对 news 实时预览
+- [ ] 整合 shortcut 的自动化
+- [ ] 用点新特性, 比如 `CoreHaptic` 啥的
+- [ ] Apple Watch ⌚️
 
-目前第一步都~~没有~~即将完成 🌚
+终于完成了第一个基本需求了. 🌚
+
+## 关于 Combine
+
+目前发现自己还不是很了解 Combine 的这种理念, 只能使用 Subject 做点简单的事情.
+可以通过这个[文档](https://heckj.github.io/swiftui-notes/?utm_source=Swift_Developments&utm_medium=email&utm_campaign=Swift_Developments_Issue_191&utm_term=2019-07-09)进行学习
 
 ## 更新记录
 
