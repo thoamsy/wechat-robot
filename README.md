@@ -25,6 +25,10 @@ SwiftUI 和 iOS 初探项目, 想知道 SwiftUI 的能力边界和一些局限,�
 更多调整参考 macOS [更新日志](https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_beta_4_release_notes)
 
 
+## Bug
+
+1. TextField 不支持中文, 在上面写中文光标会跳
+
 ## 感受
 
 SwiftUI 解决不了的问题, 必须用到 UIKit. 目前对于 UIKit 还不是很熟悉, 所以发现写出了很多用不了的 View.

@@ -16,7 +16,9 @@ struct RobotList: View {
     Button(action: {
       self.showAdding = true
     }) {
-      Image(systemName: "plus.circle").foregroundColor(.blue).font(.title)
+      Image(systemName: "plus.circle")
+       .foregroundColor(.blue)
+       .imageScale(.large)
     }
   }
 

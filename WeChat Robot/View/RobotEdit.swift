@@ -18,20 +18,18 @@ struct RobotEdit: View {
   var robot: Robot
   @Environment(\.colorScheme) var colorSchema: ColorScheme
   @State var textContent = ""
-  @State var newsTitle = ""
-  @State var newsDescription = ""
-  @State var newsLink = ""
-  @State var newsFigure = ""
   @State var isMarkdown = false
   @State var isAll = false
   @State var selected = Robot.MsgTypes.text
+  
+  @ObjectBinding var news = NewNotification()
 
   
   var cantLaunch: Bool {
     if selected == .text {
       return textContent.isEmpty
     }
-    return newsTitle.isEmpty || newsDescription.isEmpty || newsLink.isEmpty || newsFigure.isEmpty
+    return news.title.isEmpty || news.url.isEmpty
   }
   
   private func hapticIt() {
@@ -116,31 +114,6 @@ struct RobotEdit: View {
     }
   }
 
-  private var newsView: some View {
-    Form {
-      HStack {
-        Text("标题").bold().frame(width: 100)
-        Divider()
-        TextField("", text: self.$newsTitle)
-      }
-      HStack {
-        Text("描述").bold().frame(width: 100)
-        Divider()
-        TextField("", text: self.$newsDescription)
-      }
-      HStack {
-        Text("图片链接").bold().frame(width: 100)
-        Divider()
-        TextField("", text: self.$newsFigure)
-      }
-      HStack {
-        Text("跳转链接").bold().frame(width: 100)
-        Divider()
-        TextField("", text: self.$newsLink)
-      }
-    }
-  }
-
   var body: some View {
     return VStack(alignment: .leading) {
       SegmentedControl(selection: $selected) {
@@ -154,7 +127,7 @@ struct RobotEdit: View {
       if selected == .text {
         textView
       } else {
-        newsView
+        NewsTypeView(news)
       }
     }
     .navigationBarTitle(
