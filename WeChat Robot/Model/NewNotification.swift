@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 final class NewNotification: BindableObject {
+  
   var title: String = "" {
     willSet {
       willChange.send(self)
@@ -27,9 +28,14 @@ final class NewNotification: BindableObject {
   }
   var picurl: String = "" {
     willSet {
-      willChange.send(self)
+     willChange.send(self)
     }
   }
+  
+//  private let picurlSubscriber: AnySubscriber
+//  init() {
+//
+//  }
   
   let willChange = PassthroughSubject<NewNotification, Never>()
   

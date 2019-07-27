@@ -16,13 +16,15 @@ struct LabelTextField: View {
   @Binding var text: String
 
   var body: some View {
-    VStack(alignment: .leading) {
+    HStack(alignment: .center) {
       Text(label).font(.headline)
+        .multilineTextAlignment(.leading)
+        .lineLimit(1).frame(width: 100)
 
       TextField(placeholder, text: $text)
-        .padding(.all)
+        .foregroundColor(.black)
         .background(Color["eff3ef"]!)
-    }
+    }.frame(height: 44)
   }
 }
 
@@ -44,13 +46,13 @@ struct NewsTypeView: View {
 
   var body: some View {
     Form {
-      Section(header: Text("内容")) {
+      ScrollView {
         LabelTextField(label: "标题", text: $news.title)
         LabelTextField(label: "跳转链接", text: $news.url)
         LabelTextField(label: "描述", text: $news.description)
         LabelTextField(label: "图片链接", text: $news.picurl)
-      }
-    }.listRowInsets(EdgeInsets())
+      }.listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+    }
   }
 }
 

@@ -63,22 +63,33 @@ struct RobotEdit: View {
     
     
     
-    let msgType: String
+    var msgType = selected.rawValue
+    let msgBody: [String: Any]
+    
     switch selected {
       case .text where isMarkdown:
         msgType = "markdown"
-      default:
-        msgType = selected.rawValue
+        fallthrough
+      case .text:
+        msgBody = [
+          "mentioned_list": isAll ? ["@all"] : [],
+          "content": textContent,
+        ]
+      case .news:
+        msgBody = ["articles": [
+          [
+            "title": news.title,
+            "description": news.description,
+            "url": news.url,
+            "picurl": news.picurl
+          ]
+        ]]
     }
     
-    print(msgType)
 
     let body: [String: Any] = [
       "msgtype": msgType,
-      msgType: [
-        "mentioned_list": isAll ? ["@all"] : [],
-        "content": textContent,
-      ],
+      msgType: msgBody
     ]
     
 
@@ -122,7 +133,6 @@ struct RobotEdit: View {
           Text(type.rawValue.capitalized)
         }
       }
-      .frame(height: 100)
 
       if selected == .text {
         textView
