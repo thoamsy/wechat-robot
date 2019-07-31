@@ -46,12 +46,26 @@ struct NewsTypeView: View {
 
   var body: some View {
     Form {
+      Section(header: Text("内容")) {
       ScrollView {
         LabelTextField(label: "标题", text: $news.title)
         LabelTextField(label: "跳转链接", text: $news.url)
         LabelTextField(label: "描述", text: $news.description)
         LabelTextField(label: "图片链接", text: $news.picurl)
       }.listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+      }
+      
+      Section(header: Text("预览")) {
+          HStack(alignment: .center) {
+            Spacer()
+            NewsPreview(
+                title: news.title,
+                desc: news.description,
+                url: news.url
+            )
+            Spacer()
+          }.padding([.top], 15)
+      }
     }
   }
 }

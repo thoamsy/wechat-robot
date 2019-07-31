@@ -24,8 +24,21 @@ struct SFView: UIViewControllerRepresentable {
 struct NewsPreview: View {
   let title: String
   let desc: String
-  let linkURL: URL?
+  private var linkURL: URL? {
+    if let url = URL(string: self.url) {
+      return url
+    } else {
+      return nil
+    }
+  }
+  var url: String
   @State private var goURL = false
+  
+  init(title: String, desc: String, url: String) {
+    self.title = title
+    self.desc = desc;
+    self.url = url
+  }
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -61,7 +74,7 @@ struct NewsPreview: View {
 #if DEBUG
   struct NewsPreview_Previews: PreviewProvider {
     static var previews: some View {
-      NewsPreview(title: "ios bu duo", desc: "", linkURL: URL(string: "https://www.baidu.com"))
+      NewsPreview(title: "ios bu duo", desc: "", url: "https://www.baidu.com")
     }
   }
 #endif
