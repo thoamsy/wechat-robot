@@ -17,7 +17,7 @@
 		59331A0522CFC473002B9FA4 /* RobotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0422CFC473002B9FA4 /* RobotList.swift */; };
 		59331A0822CFC494002B9FA4 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59331A0722CFC494002B9FA4 /* Robot.swift */; };
 		594FFEDD22EC556600CDBC83 /* NewsTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594FFEDC22EC556600CDBC83 /* NewsTypeView.swift */; };
-		594FFEDF22EC825400CDBC83 /* NewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594FFEDE22EC825400CDBC83 /* NewNotification.swift */; };
+		594FFEDF22EC825400CDBC83 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594FFEDE22EC825400CDBC83 /* NewsStore.swift */; };
 		594FFEE222EC834900CDBC83 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594FFEE122EC834900CDBC83 /* Color.swift */; };
 		5965C1D022DB629D001FCFC3 /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965C1CF22DB629D001FCFC3 /* MultilineTextView.swift */; };
 		596D328F22E0CF0A0084FAF8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 596D328E22E0CF0A0084FAF8 /* README.md */; };
@@ -39,7 +39,7 @@
 		59331A0422CFC473002B9FA4 /* RobotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotList.swift; sourceTree = "<group>"; };
 		59331A0722CFC494002B9FA4 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		594FFEDC22EC556600CDBC83 /* NewsTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsTypeView.swift; path = "../../../../../../../System/Volumes/Data/Users/yk/Documents/SwiftUI/WeChat Robot/WeChat Robot/View/NewsTypeView.swift"; sourceTree = "<group>"; };
-		594FFEDE22EC825400CDBC83 /* NewNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewNotification.swift; path = "../../../../../../../System/Volumes/Data/Users/yk/Documents/SwiftUI/WeChat Robot/WeChat Robot/Model/NewNotification.swift"; sourceTree = "<group>"; };
+		594FFEDE22EC825400CDBC83 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsStore.swift; path = "../../../../../../../System/Volumes/Data/Users/yk/Documents/SwiftUI/WeChat Robot/WeChat Robot/Model/NewsStore.swift"; sourceTree = "<group>"; };
 		594FFEE122EC834900CDBC83 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = "../../../../../../../System/Volumes/Data/Users/yk/Documents/SwiftUI/WeChat Robot/WeChat Robot/Extension/Color.swift"; sourceTree = "<group>"; };
 		5965C1CF22DB629D001FCFC3 /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
 		596D328E22E0CF0A0084FAF8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../../../../../../System/Volumes/Data/Users/yk/Documents/SwiftUI/WeChat Robot/README.md"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				59331A0722CFC494002B9FA4 /* Robot.swift */,
 				591CEFEE22D61E8400884678 /* RobotStore.swift */,
-				594FFEDE22EC825400CDBC83 /* NewNotification.swift */,
+				594FFEDE22EC825400CDBC83 /* NewsStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 				591CEFEF22D61E8400884678 /* RobotStore.swift in Sources */,
 				59C5EEB422CFC57C0055473A /* RobotCell.swift in Sources */,
 				593319EE22CFC26F002B9FA4 /* AppDelegate.swift in Sources */,
-				594FFEDF22EC825400CDBC83 /* NewNotification.swift in Sources */,
+				594FFEDF22EC825400CDBC83 /* NewsStore.swift in Sources */,
 				593319F022CFC26F002B9FA4 /* SceneDelegate.swift in Sources */,
 				594FFEE222EC834900CDBC83 /* Color.swift in Sources */,
 				594FFEDD22EC556600CDBC83 /* NewsTypeView.swift in Sources */,

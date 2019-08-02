@@ -51,16 +51,12 @@ struct UserDefault<T: Codable> {
   }
 }
 
-final class RobotStore: BindableObject {
-  let willChange = PassthroughSubject<RobotStore, Never>()
-
+final class RobotStore: ObservableObject {
+  
   @UserDefault(key: "ROBOT_LIST")
-  var robots: [Robot] = [] {
-    willSet {
-      willChange.send(self)
-    }
-  }
-
+  @Published
+  var robots: [Robot] = []
+  
   init() {
   }
 

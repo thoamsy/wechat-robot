@@ -21,17 +21,16 @@ struct RobotEdit: View {
   @State var isMarkdown = false
   @State var isAll = false
   @State var selected = Robot.MsgTypes.text
-  
-  @ObjectBinding var news = NewNotification()
 
-  
+  @ObservedObject var news = NewsStore()
+
   var cantLaunch: Bool {
     if selected == .text {
       return textContent.isEmpty
     }
     return news.title.isEmpty || news.url.isEmpty
   }
-  
+
   private func hapticIt() {
     guard supportsHaptics else { return }
     let hapticDict = [
@@ -39,16 +38,16 @@ struct RobotEdit: View {
         [CHHapticPattern.Key.event: [
           CHHapticPattern.Key.eventType: CHHapticEvent.EventType.hapticTransient,
           CHHapticPattern.Key.time: 0.001,
-         CHHapticPattern.Key.eventDuration: 0.3
-        ]
-        ]
-      ]
+          CHHapticPattern.Key.eventDuration: 0.3,
+        ],
+        ],
+      ],
     ]
     do {
       let pattern = try CHHapticPattern(dictionary: hapticDict)
       let engine = try CHHapticEngine()
       let player = try engine.makePlayer(with: pattern)
-      
+
       try engine.start()
       try player.start(atTime: 0)
       engine.stop()
@@ -60,45 +59,41 @@ struct RobotEdit: View {
   private func launchNotification() {
     var request = URLRequest(url: robot.api)
     request.httpMethod = "POST"
-    
-    
-    
+
     var msgType = selected.rawValue
     let msgBody: [String: Any]
-    
+
     switch selected {
-      case .text where isMarkdown:
-        msgType = "markdown"
-        fallthrough
-      case .text:
-        msgBody = [
-          "mentioned_list": isAll ? ["@all"] : [],
-          "content": textContent,
-        ]
-      case .news:
-        msgBody = ["articles": [
-          [
-            "title": news.title,
-            "description": news.description,
-            "url": news.url,
-            "picurl": news.picurl
-          ]
-        ]]
+    case .text where isMarkdown:
+      msgType = "markdown"
+      fallthrough
+    case .text:
+      msgBody = [
+        "mentioned_list": isAll ? ["@all"] : [],
+        "content": textContent,
+      ]
+    case .news:
+      msgBody = ["articles": [
+        [
+          "title": news.title,
+          "description": news.description,
+          "url": news.url,
+          "picurl": news.picurl,
+        ],
+      ]]
     }
-    
 
     let body: [String: Any] = [
       "msgtype": msgType,
-      msgType: msgBody
+      msgType: msgBody,
     ]
-    
 
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     request.httpBody = jsonData
 
     URLSession(configuration: sessionConfig).dataTask(with: request) {
-      data, response, error in
-      guard let error = error else {
+      _, _, error in
+      guard error != nil else {
         return
       }
       self.hapticIt()
@@ -113,8 +108,8 @@ struct RobotEdit: View {
             self.$textContent,
             placeholder: "通知点啥呢🤔?",
             with: self.colorSchema)
-          .frame(height: 150)
-          .font(.body)
+            .frame(height: 150)
+            .font(.body)
         }
       }
 
@@ -127,12 +122,12 @@ struct RobotEdit: View {
 
   var body: some View {
     return VStack(alignment: .leading) {
-      SegmentedControl(selection: $selected) {
+      Picker("foo", selection: $selected) {
         ForEach(Robot.MsgTypes.allCases, id: \.self) { type in
-          
+
           Text(type.rawValue.capitalized)
         }
-      }
+      }.pickerStyle(SegmentedPickerStyle())
 
       if selected == .text {
         textView

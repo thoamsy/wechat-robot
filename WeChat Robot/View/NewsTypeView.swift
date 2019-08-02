@@ -29,8 +29,7 @@ struct LabelTextField: View {
 }
 
 struct NewsTypeView: View {
-  @ObjectBinding var news: NewNotification
-  
+  @ObservedObject var news: NewsStore
   
   enum News {
     case title(String)
@@ -39,7 +38,7 @@ struct NewsTypeView: View {
     case picurl(String)
   }
   
-  init(_ store: NewNotification) {
+  init(_ store: NewsStore) {
     news = store
   }
   

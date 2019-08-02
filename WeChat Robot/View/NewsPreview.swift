@@ -6,8 +6,8 @@
 //  Copyright © 2019 yk. All rights reserved.
 //
 
-import SwiftUI
 import SafariServices
+import SwiftUI
 
 struct SFView: UIViewControllerRepresentable {
   let url: URL
@@ -15,9 +15,8 @@ struct SFView: UIViewControllerRepresentable {
     let sf = SFSafariViewController(url: url)
     return sf
   }
-  
+
   func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SFView>) {
-    
   }
 }
 
@@ -31,12 +30,13 @@ struct NewsPreview: View {
       return nil
     }
   }
+
   var url: String
   @State private var goURL = false
-  
+
   init(title: String, desc: String, url: String) {
     self.title = title
-    self.desc = desc;
+    self.desc = desc
     self.url = url
   }
 
@@ -57,17 +57,17 @@ struct NewsPreview: View {
     }.frame(width: 300)
       .border(
         Color.secondary,
-        width: 1,
-        cornerRadius: 8
+        width: 1
       )
-      .tapAction {
+      .cornerRadius(8)
+      .onTapGesture {
         if let _ = self.linkURL {
           self.goURL = true
         }
-    }
-    .sheet(isPresented: $goURL) {
-      SFView(url: self.linkURL!)
-    }
+      }
+      .sheet(isPresented: $goURL) {
+        SFView(url: self.linkURL!)
+      }
   }
 }
 
