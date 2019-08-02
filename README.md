@@ -19,6 +19,17 @@ SwiftUI 和 iOS 初探项目, 想知道 SwiftUI 的能力边界和一些局限,�
 ## 更新记录
 
 主要是我的代码中, 有所改动的地方
+**PS: 每次升级真的改不动. 文档没有, 报错乱报. 真他妈无语**
+
+不知道为啥, 我的代码在 beta5 里跑不起来了.
+
+### Beta 5
+
+1. `@BindableObject -> @ObservableObject`,  `@ObjectBinding -> @ObservedObject`, 新增 `@Published` 来节省之前无聊的 `willSet` 逻辑
+2. `border(::cornerRadius)` 淘汰
+3. `SegmentedControl -> Picker().pickerStyle(SegementedControl())` 
+4. `tapAction -> onTapGesture`
+
 
 ### Beta 4
 
